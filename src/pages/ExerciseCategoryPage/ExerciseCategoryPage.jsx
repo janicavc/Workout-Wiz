@@ -4,7 +4,7 @@ export default function ExerciseCategoryPage() {
     const [categories, setCategories] = useState([]);
     
     // API KEY and URL
-    const API_KEY = '';
+    const API_KEY = process.env.REACT_APP_API_KEY;
     const API_URL = 'https://wger.de/api/v2/';
 
     useEffect(() => {
@@ -25,7 +25,7 @@ export default function ExerciseCategoryPage() {
             }
         }
         fetchCategories();
-    }, []);
+    }, [API_KEY]);
 
   return (
     <>
