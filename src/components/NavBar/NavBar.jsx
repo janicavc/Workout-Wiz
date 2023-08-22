@@ -13,7 +13,7 @@ export default function NavBar({ user, setUser }) {
       &nbsp; | &nbsp;
       <Link to="/categories">Exercise Categories</Link>
       &nbsp; | &nbsp;
-      <Link to="/profile">Profile</Link>
+      <Link to="/progress">Progress Page</Link>
       &nbsp;&nbsp;
       <span>Welcome, {user.name}</span>
       &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
