@@ -31,7 +31,7 @@ export default function CategoryDetailPage() {
 
     return (
         <>
-            <h1>Exercises for Category</h1>
+            <h1>Exercises</h1>
             <div className="category-container">
                 {exercises.map((exercise) => (
                     <Link
