@@ -7,6 +7,7 @@ import NavBar from '../../components/NavBar/NavBar';
 import HomePage from '../HomePage/HomePage';
 import ExerciseCategoryPage from '../ExerciseCategoryPage/ExerciseCategoryPage';
 import CategoryDetailPage from '../CategoryDetailPage/CategoryDetailPage';
+import ProfilePage from '../ProfilePage/ProfilePage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -21,6 +22,7 @@ export default function App() {
               <Route path='/' element={<HomePage />} />
               <Route path='/categories' element={<ExerciseCategoryPage />} />
               <Route path="/exercise/:categoryId" element={<CategoryDetailPage />} />
+              <Route path='/profile' element={<ProfilePage />} />
             </Routes>
           </>
           :
