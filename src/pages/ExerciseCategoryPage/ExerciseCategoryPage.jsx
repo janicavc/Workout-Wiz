@@ -1,13 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function ExerciseCategoryPage() {
     const [categories, setCategories] = useState([]);
-    const navigate = useNavigate();
-
-    function handleCategory(categoryId) {
-        navigate(`/exercises/${categoryId}`);
-    }
     
     // API KEY and URL
     const API_KEY = process.env.REACT_APP_API_KEY;
@@ -38,13 +33,15 @@ export default function ExerciseCategoryPage() {
         <h1>Exercise Categories</h1>
         <div className='category-container'>
             {categories.map((category) => (
-                <div
+                <Link
                     key={category.id}
                     className='category-card-ink'
-                    onClick={() => handleCategory(category.id)}
+                    to={`/exercise/${category.id}`}
                 >
-                    <h2>{category.name}</h2>
-                </div>
+                    <div>
+                        <h2>{category.name}</h2>
+                    </div>
+                </Link>
             ))}
         </div>
     </>
