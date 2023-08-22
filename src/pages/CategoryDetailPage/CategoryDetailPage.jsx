@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useState } from "react";
-import { Link, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 
 export default function CategoryDetailPage() {
     const { categoryId } = useParams();
@@ -34,15 +34,16 @@ export default function CategoryDetailPage() {
             <h1>Exercises</h1>
             <div className="category-container">
                 {exercises.map((exercise) => (
-                    <Link
+                    <div
                         key={exercise.id}
                         className="category-card-link"
                         to={`/exercise/${exercise.id}`}
                     >
                         <div className="category-card">
                             <h2>{exercise.name}</h2>
+                            <p>{exercise.description}</p>
                         </div>
-                    </Link>
+                    </div>
                 ))}
             </div>
         </>
