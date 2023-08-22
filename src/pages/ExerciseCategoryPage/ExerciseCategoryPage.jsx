@@ -30,11 +30,17 @@ export default function ExerciseCategoryPage() {
   return (
     <>
         <h1>Exercise Categories</h1>
-        <ul>
+        <div className='category-container'>
             {categories.map((category) => (
-                <li key={category.id}>{category.name}</li>
+                <div
+                    key={category.id}
+                    className='category-card'
+                    onClick={() => handleCategory(category.id)}
+                >
+                    <h2>{category.name}</h2>
+                </div>
             ))}
-        </ul>
+        </div>
     </>
   );
 }
