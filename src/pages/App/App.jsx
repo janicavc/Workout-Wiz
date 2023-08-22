@@ -6,6 +6,7 @@ import AuthPage from '../AuthPage/AuthPage';
 import NavBar from '../../components/NavBar/NavBar';
 import HomePage from '../HomePage/HomePage';
 import ExerciseCategoryPage from '../ExerciseCategoryPage/ExerciseCategoryPage';
+import CategoryDetailPage from '../CategoryDetailPage/CategoryDetailPage';
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -19,6 +20,7 @@ export default function App() {
               {/* Route components in here */}
               <Route path='/' element={<HomePage />} />
               <Route path='/categories' element={<ExerciseCategoryPage />} />
+              <Route path="/exercise/:categoryId" element={<CategoryDetailPage />} />
             </Routes>
           </>
           :
