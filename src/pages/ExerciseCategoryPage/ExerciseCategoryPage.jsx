@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ExerciseCategoryPage() {
     const [categories, setCategories] = useState([]);
@@ -32,12 +33,15 @@ export default function ExerciseCategoryPage() {
         <h1>Exercise Categories</h1>
         <div className='category-container'>
             {categories.map((category) => (
-                <div
+                <Link
                     key={category.id}
-                    className='category-card'
+                    to={`/exercises/${category.id}`}
+                    className='category-card-ink'
                 >
-                    <h2>{category.name}</h2>
-                </div>
+                    <div className='category-card'>
+                        <h2>{category.name}</h2>
+                    </div>
+                </Link>
             ))}
         </div>
     </>
