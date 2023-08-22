@@ -2,6 +2,12 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 
+function stripHtmlTags(html) {
+    const tempElement = document.createElement('div');
+    tempElement.innerHTML = html;
+    return tempElement.textContent || tempElement.innerText || '';
+}
+
 export default function CategoryDetailPage() {
     const { categoryId } = useParams();
     const [exercises, setExercises] = useState([]);
@@ -21,7 +27,12 @@ export default function CategoryDetailPage() {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
                 const data = await response.json();
-                setExercises(data.results);
+                // take out implemented html tags from api
+                const cleanDescription = data.results.map((exercise) => ({
+                    ...exercise,
+                    description: stripHtmlTags(exercise.description),
+                }));
+                setExercises(cleanDescription);
             } catch (error) {
                 console.error('Error fetching exercises:', error);
             }
