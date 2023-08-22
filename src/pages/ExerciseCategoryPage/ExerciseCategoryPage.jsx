@@ -35,7 +35,6 @@ export default function ExerciseCategoryPage() {
                 <div
                     key={category.id}
                     className='category-card'
-                    onClick={() => handleCategory(category.id)}
                 >
                     <h2>{category.name}</h2>
                 </div>
