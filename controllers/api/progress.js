@@ -5,6 +5,7 @@ module.exports = {
 };
 
 async function create(req, res) {
+    console.log('recieved data', req.body);
     try {
         const newProgress = await Progress.create(req.body);
         res.json(newProgress);
