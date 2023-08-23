@@ -5,12 +5,13 @@ export default function ProgressPage() {
   const [progresses, setProgresses] = useState([]);
 
   const addProgress = (newProgress) => {
+    console.log("new Progress Data:", newProgress);
     setProgresses([...progresses, newProgress]);
   };
 
   return(
     <>
-      <h1>Personal Progress</h1>
+      <h1>Personal Progress Form</h1>
       <ProgressForm onSubmit={addProgress} />
 
       <div>

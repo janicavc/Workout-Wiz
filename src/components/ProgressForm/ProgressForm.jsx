@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-export default function ProgressForm() {
+export default function ProgressForm({ onSubmit }) {
   const [formData, setFormData] = useState({
     date: '',
     exercise: '',
@@ -16,6 +16,7 @@ export default function ProgressForm() {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log('Form Data:', formData);
+    onSubmit(formData);
     setFormData({
       date: '',
       exercise: '',
@@ -26,7 +27,6 @@ export default function ProgressForm() {
 
   return (
     <>
-    <h1>Personal Progress</h1>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="date">Date:</label>
