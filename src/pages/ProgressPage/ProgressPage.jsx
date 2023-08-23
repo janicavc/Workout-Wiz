@@ -1,76 +1,29 @@
-import React, { useState } from 'react'
+import { useState } from "react";
+import ProgressForm from "../../components/ProgressForm/ProgressForm";
 
 export default function ProgressPage() {
-  const [formData, setFormData] = useState({
-    date: '',
-    exercise: '',
-    weight: '',
-    description: '',
-  });
+  const [progresses, setProgresses] = useState([]);
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({...formData, [name]: value});
+  const addProgress = (newProgress) => {
+    setProgresses([...progresses, newProgress]);
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log('Form Data:', formData);
-    setFormData({
-      date: '',
-      exercise: '',
-      weight: '',
-      description: '',
-    });
-  };
-
-  return (
+  return(
     <>
-    <h1>Personal Progress</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="date">Date:</label>
-          <input
-            type='date'
-            name='date'
-            value={formData.date}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="exercise">Exercise:</label>
-          <input
-            type='text'
-            name='exercise'
-            value={formData.exercise}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="weight">Weight:</label>
-          <input
-            type='number'
-            name='weight'
-            value={formData.weight}
-            onChange={handleInputChange}
-            required
-          />
-        </div>
-        <div>
-          <label htmlFor="description">Description:</label>
-          <textarea
-            name="description"
-            value={formData.description}
-            onChange={handleInputChange}
-            cols="30"
-            rows="10"
-            required
-          />
-        </div>
-        <button type='submit'>Submit</button>
-      </form>
+      <h1>Personal Progress</h1>
+      <ProgressForm onSubmit={addProgress} />
+
+      <div>
+        <h2>Progress</h2>
+        {progresses.map((progress, index) => (
+          <div key={index}>
+            <p>Date: {progress.date}</p>
+            <p>Exercise: {progress.exercise}</p>
+            <p>Weight: {progress.weight}</p>
+            <p>Description: {progress.description}</p>
+          </div>
+        ))}
+      </div>
     </>
-  )
+  );
 }
