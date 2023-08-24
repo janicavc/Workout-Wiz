@@ -14,20 +14,21 @@ export default function App() {
 
   return (
     <main className="App">
-      { user ?
-          <>
-            <NavBar user={user} setUser={setUser} />
-            <Routes>
-              {/* Route components in here */}
-              <Route path='/' element={<HomePage />} />
-              <Route path='/categories' element={<ExerciseCategoryPage />} />
-              <Route path="/exercise/:categoryId" element={<CategoryDetailPage />} />
-              <Route path='/progress' element={<ProgressPage />} />
-            </Routes>
-          </>
-          :
-          <AuthPage setUser={setUser} />
-      }
+      <NavBar user={user} setUser={setUser} />
+      <Routes>
+        {/* Route components in here */}
+        <Route path='/home' element={<HomePage />} />
+        <Route path='/categories' element={<ExerciseCategoryPage />} />
+        <Route path="/exercise/:categoryId" element={<CategoryDetailPage />} />
+        {user ? (
+          // If the user is authenticated, render the protected route
+          <Route path='/progress' element={<ProgressPage />} />
+        ) : (
+          // If the user is not authenticated, render the AuthPage
+          <Route path='/' element={<AuthPage setUser={setUser} />} />
+        )}
+      </Routes>
     </main>
   );
+  
 }
