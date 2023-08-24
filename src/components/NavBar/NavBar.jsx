@@ -9,7 +9,7 @@ export default function NavBar({ user, setUser }) {
 
   return (
     <nav>
-      <Link to="/home">Home Page</Link>
+      <Link to="/">Home Page</Link>
       &nbsp; | &nbsp;
       <Link to="/categories">Exercise Categories</Link>
       &nbsp; | &nbsp;
@@ -21,7 +21,7 @@ export default function NavBar({ user, setUser }) {
           &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
         </>
       ) : (
-        <Link to="">Log In</Link>
+        <Link to="/auth">Log In</Link>
       )}
     </nav>
   );

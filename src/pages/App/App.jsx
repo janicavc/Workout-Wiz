@@ -17,7 +17,7 @@ export default function App() {
       <NavBar user={user} setUser={setUser} />
       <Routes>
         {/* Route components in here */}
-        <Route path='/home' element={<HomePage />} />
+        <Route path='/' element={<HomePage />} />
         <Route path='/categories' element={<ExerciseCategoryPage />} />
         <Route path="/exercise/:categoryId" element={<CategoryDetailPage />} />
         {user ? (
@@ -25,7 +25,7 @@ export default function App() {
           <Route path='/progress' element={<ProgressPage />} />
         ) : (
           // If the user is not authenticated, render the AuthPage
-          <Route path='/' element={<AuthPage setUser={setUser} />} />
+          <Route path='/auth' element={<AuthPage setUser={setUser} />} />
         )}
       </Routes>
     </main>
