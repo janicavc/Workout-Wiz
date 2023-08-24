@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const progressCtrl = require('../../controllers/api/progress');
+const progressCtrl = require('../../controllers/api/progresses');
 
 // new progress item
 router.post('/progress', progressCtrl.create);
