@@ -1,8 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ProgressForm from "../../components/ProgressForm/ProgressForm";
 
 export default function ProgressPage() {
   const [progresses, setProgresses] = useState([]);
+
+  useEffect(() => {
+    async function fetchProgressData() {
+      try {
+        const response = await fetch('/api/progress');
+        const data = await response.json();
+        setProgresses(data);
+      } catch (error) {
+        console.error('Error fetching progress data:', error);
+      }
+    }
+    fetchProgressData();
+  }, []);
 
   const addProgress = (newProgress) => {
     console.log("new Progress Data:", newProgress);
