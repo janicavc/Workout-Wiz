@@ -1,65 +1,62 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
 export default function ProgressForm({ onSubmit }) {
-  const [formData, setFormData] = useState({
+  const initialFormData = {
     date: '',
     exercise: '',
     weight: '',
     description: '',
-  });
-
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({...formData, [name]: value});
   };
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
+  const [formData, setFormData] = useState(initialFormData);
+
+  function handleInputChange(evt) {
+    const newFormData = { ...formData, [evt.target.name]: evt.target.value };
+    setFormData(newFormData);
+  }
+
+  async function handleSubmit(evt) {
+    evt.preventDefault();
     console.log('Form Data:', formData);
     onSubmit(formData);
-    setFormData({
-      date: '',
-      exercise: '',
-      weight: '',
-      description: '',
-    });
-  };
+    setFormData(initialFormData);
+  }
 
   return (
-    <>
+    <div>
       <form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="date">Date:</label>
+        <label>
+          Date:
           <input
-            type='date'
-            name='date'
+            type="date"
+            name="date"
             value={formData.date}
             onChange={handleInputChange}
             required
           />
-        </div>
-        <div>
-          <label htmlFor="exercise">Exercise:</label>
+        </label>
+        <label>
+          Exercise:
           <input
-            type='text'
-            name='exercise'
+            type="text"
+            name="exercise"
             value={formData.exercise}
             onChange={handleInputChange}
             required
           />
-        </div>
-        <div>
-          <label htmlFor="weight">Weight:</label>
+        </label>
+        <label>
+          Weight:
           <input
-            type='number'
-            name='weight'
+            type="number"
+            name="weight"
             value={formData.weight}
             onChange={handleInputChange}
             required
           />
-        </div>
-        <div>
-          <label htmlFor="description">Description:</label>
+        </label>
+        <label>
+          Description:
           <textarea
             name="description"
             value={formData.description}
@@ -68,9 +65,9 @@ export default function ProgressForm({ onSubmit }) {
             rows="10"
             required
           />
-        </div>
-        <button type='submit'>Submit</button>
+        </label>
+        <button type="submit">Submit</button>
       </form>
-    </>
-  )
+    </div>
+  );
 }
