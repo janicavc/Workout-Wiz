@@ -17,10 +17,8 @@ async function create(req, res) {
 
 async function getProgress(req, res) {
     try {
-        const userId = req.user._id;
-        const userProgress = await Progress.find({ user: userId});
-
-        res.json(userProgress);
+        const allProgress = await Progress.find();
+        res.json(allProgress);
     } catch (error) {
         res.status(500).json({ error: 'Error fetching progress' });
     }

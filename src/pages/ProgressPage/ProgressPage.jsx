@@ -1,38 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ProgressForm from "../../components/ProgressForm/ProgressForm";
-import { createProgress } from "../../utilities/progress-api";
+import { createProgress, getProgress } from "../../utilities/progress-api";
 
 export default function ProgressPage() {
   const [progresses, setProgresses] = useState([]);
 
+  useEffect(() => {
+    async function fetchProgressData() {
+      try {
+        const data = await getProgress(); // Fetch progress data using the new API function
+        setProgresses(data);
+      } catch (error) {
+        console.error('Error fetching progress data:', error);
+      }
+    }
 
-    // async function fetchProgressData() {
-    //   try {
-    //     const response = await fetch('/api/progress');
-    //     const data = await response.json();
-    //     setProgresses(data);
-    //   } catch (error) {
-    //     console.error('Error fetching progress data:', error);
-    //   }
-    // }
-
-    // useEffect(() => {
-    //   fetchProgressData();
-    // }, []);
+    fetchProgressData();
+  }, []);
 
   const addProgress = async (newProgress) => {
     console.log("new Progress Data:", newProgress);
-    setProgresses([...progresses, newProgress]);
 
     try {
-      await createProgress(newProgress);
-      // fetchProgressData();
+      const createdProgress = await createProgress(newProgress);
+      setProgresses([...progresses, createdProgress]);
     } catch (error) {
       console.error('Error saving progress', error);
     }
   };
 
-  return(
+  return (
     <>
       <h1>Personal Progress Form</h1>
       <ProgressForm onSubmit={addProgress} />

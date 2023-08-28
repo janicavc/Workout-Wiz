@@ -1,31 +1,12 @@
-const Progress = require('../../models/progress');
+import sendRequest from "./send-request";
 
-async function createProgress(userId, date, exercise, weight, description) {
-    try {
-        const progress = new Progress({
-            date,
-            exercise,
-            weight,
-            description,
-        });
+const BASE_URL = '/api/progress';
 
-        const savedProgress = await progress.save();
-        return savedProgress;
-    } catch (error) {
-        throw error;
-    }
+
+export async function createProgress(progressData) {
+    return sendRequest(`${BASE_URL}/progress`, 'POST', progressData);
 }
 
-// async function getAllProgress(userId) {
-//     try {
-//         const progressEntries = await Progress.find({ user: userId }).exec();
-//         return progressEntries;
-//     } catch (error) {
-//         throw error;
-//     }
-// }
-
-module.exports = {
-    createProgress,
-    // getAllProgress,
-};
+export async function getProgress() {
+    return sendRequest(`${BASE_URL}/progress`, 'GET');
+  }

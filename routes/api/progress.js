@@ -4,7 +4,7 @@ const progressCtrl = require('../../controllers/api/progresses');
 
 // new progress item
 router.post('/progress', progressCtrl.create);
-// get progress in data
+// show all progress entries
 router.get('/progress', progressCtrl.getProgress);
 
 
