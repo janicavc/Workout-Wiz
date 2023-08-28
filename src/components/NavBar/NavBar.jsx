@@ -8,7 +8,7 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav>
+    <nav class='navbar navbar-expand-sm bg-light' className='navbar'>
       <Link to="/">Home Page</Link>
       &nbsp; | &nbsp;
       <Link to="/categories">Exercise Categories</Link>
