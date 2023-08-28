@@ -6,8 +6,9 @@
 }
 
 .category-cards {
-    border: 1px solid black;
+    border: 3px solid #3C5556;
     border-radius: 5px;
+    background-color: #C8DBD7;
     margin: 10px;
     width: 400px;
     height: 400px;
@@ -17,5 +18,5 @@
 .category-cards:hover {
     width: 450px;
     height: 450px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, .3);
+    box-shadow: 0 0 20px rgba(1, 41, 43, 0.8);
 }
