@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
+import './CategoryDetailPage.css';
 
 function stripHtmlTags(html) {
     const tempElement = document.createElement('div');
@@ -43,14 +44,14 @@ export default function CategoryDetailPage() {
     return (
         <>
             <h1>Exercises</h1>
-            <div className="category-container">
+            <div className="exercise-container">
                 {exercises.map((exercise) => (
                     <div
                         key={exercise.id}
-                        className="category-card-link"
+                        className="exercise-card"
                         to={`/exercise/${exercise.id}`}
                     >
-                        <div className="category-card">
+                        <div className="exercise-card-info">
                             <h2>{exercise.name}</h2>
                             <p>{exercise.description}</p>
                         </div>
