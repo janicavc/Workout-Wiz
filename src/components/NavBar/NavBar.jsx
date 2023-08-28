@@ -9,7 +9,7 @@ export default function NavBar({ user, setUser }) {
   }
 
   return (
-    <nav class='navbar navbar-expand-sm bg-danger-subtle' className='navbar'>
+    <nav class='navbar navbar-expand-sm bg-danger-subtle justify-content-center' className='navbar'>
       <Link className='link' to="/">Home Page</Link>
       &nbsp; | &nbsp;
       <Link className='link' to="/categories">Exercise Categories</Link>

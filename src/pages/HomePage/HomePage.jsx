@@ -4,6 +4,7 @@ import './HomePage.css';
 export default function HomePage() {
   return (
     <>
+    <div className='body'>
     <div className='home-page'>
       <h1>HomePage</h1>
       <p>
@@ -17,6 +18,7 @@ export default function HomePage() {
         Start your journey with Workout Wiz today and become the best version of yourself!<br />
         <strong>🏆 Unlock Your Potential with Workout Wiz! 🏆</strong>
       </p>
+    </div>
     </div>
     </>
   );
