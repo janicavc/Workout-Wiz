@@ -66,7 +66,7 @@ export default function ProgressForm({ onSubmit }) {
             required
           />
         </label>
-        <button type="submit">Submit</button>
+        <button className='btn btn-primary' type="submit">Submit</button>
       </form>
     </div>
   );
