@@ -1,59 +1,94 @@
-import { Component } from 'react';
+import React, { useState } from 'react';
 import { signUp } from '../../utilities/users-service';
 import './SignUpForm.css';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 
-export default class SignUpForm extends Component {
-  state = {
+function SignUpForm(props) {
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     password: '',
     confirm: '',
-    error: ''
-  };
+  });
 
-  handleChange = (evt) => {
-    this.setState({
+  const [error, setError] = useState('');
+  
+  // Use useNavigate to get the navigation function
+  const navigate = useNavigate();
+
+  const handleChange = (evt) => {
+    setFormData({
+      ...formData,
       [evt.target.name]: evt.target.value,
-      error: ''
     });
+    setError('');
   };
 
-  handleSubmit = async (evt) => {
+  const handleSubmit = async (evt) => {
     evt.preventDefault();
     try {
-      const {name, email, password} = this.state;
-      const formData = {name, email, password};
-      // The promise returned by the signUp service
-      // method will resolve to the user object included
-      // in the payload of the JSON Web Token (JWT)
       const user = await signUp(formData);
-      this.props.setUser(user);
+      props.setUser(user);
+      navigate('/');
     } catch {
-      // An error occurred
-      // Probably due to a duplicate email
-      this.setState({ error: 'Sign Up Failed - Try Again' });
+      setError('Sign Up Failed - Try Again');
     }
   };
 
-  render() {
-    const disable = this.state.password !== this.state.confirm;
-    return (
-      <div>
-        <div className="form-container-signup">
-          <form autoComplete="off" onSubmit={this.handleSubmit}>
-            <label>Name</label>
-            <input class='form-control' type="text" name="name" value={this.state.name} onChange={this.handleChange} required />
-            <label>Email</label>
-            <input class='form-control' type="email" name="email" value={this.state.email} onChange={this.handleChange} required />
-            <label>Password</label>
-            <input class='form-control' type="password" name="password" value={this.state.password} onChange={this.handleChange} required />
-            <label>Confirm</label>
-            <input class='form-control' type="password" name="confirm" value={this.state.confirm} onChange={this.handleChange} required />
-            <button class='btn btn-outline-success' type="submit" disabled={disable}>SIGN UP</button>
-          </form>
-        </div>
-        <p className="error-message">&nbsp;{this.state.error}</p>
+  const disable = formData.password !== formData.confirm;
+
+  return (
+    <div>
+      <div className="form-container-signup">
+        <form autoComplete="off" onSubmit={handleSubmit}>
+          <label>Name</label>
+          <input
+            className="form-control"
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <label>Email</label>
+          <input
+            className="form-control"
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <label>Password</label>
+          <input
+            className="form-control"
+            type="password"
+            name="password"
+            value={formData.password}
+            onChange={handleChange}
+            required
+          />
+          <label>Confirm</label>
+          <input
+            className="form-control"
+            type="password"
+            name="confirm"
+            value={formData.confirm}
+            onChange={handleChange}
+            required
+          />
+          <button
+            className="btn btn-outline-success"
+            type="submit"
+            disabled={disable}
+          >
+            SIGN UP
+          </button>
+        </form>
       </div>
-    );
-  }
+      <p className="error-message">&nbsp;{error}</p>
+    </div>
+  );
 }
+
+export default SignUpForm;
