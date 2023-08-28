@@ -7,6 +7,7 @@ export default function HomePage() {
     <div className='body'>
     <div className='home-page'>
       <h1>HomePage</h1>
+      <br /><br />
       <p>
         <strong>Welcome to Workout Wiz - Your Fitness Companion!</strong><br /><br />
         Are you ready to embark on a journey to a healthier, stroger you?<br />

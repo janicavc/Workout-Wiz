@@ -2,12 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 500px;
+    min-height: 200px;
 }
 
-.home-page {
+p {
     border-radius: 5px;
     border: 2px solid black;
     gap: 20px;
-    margin: 30px;
+    margin: 30px 90px;
 }
