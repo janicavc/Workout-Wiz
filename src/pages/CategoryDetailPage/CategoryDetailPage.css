@@ -10,3 +10,24 @@
     border: 2px solid black;
     border-radius: 10px;
 }
+
+.dropdown {
+    position: relative;
+  }
+
+button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+
+button:hover {
+    background-color: #0056b3;
+  }
+
+.dropdown button:focus + p {
+    display: block;
+  }

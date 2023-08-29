@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
 import './CategoryDetailPage.css';
+import Dropdown from "../../components/Dropdown/Dropdown";
 
 function stripHtmlTags(html) {
     const tempElement = document.createElement('div');
@@ -53,7 +54,7 @@ export default function CategoryDetailPage() {
                     >
                         <div className="exercise-card-info">
                             <h2>{exercise.name}</h2>
-                            <p>{exercise.description}</p>
+                            <Dropdown description={exercise.description} />
                         </div>
                     </div>
                 ))}
