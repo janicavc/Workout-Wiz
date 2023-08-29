@@ -151,3 +151,4 @@ export default function ProgressForm({ onSubmit }) {
 - Add pictures for each exercise category
 - Save exercises as favorites
 - Add a nutrition component to track nutrition
+- Let users create their own exercises and add it to the list
