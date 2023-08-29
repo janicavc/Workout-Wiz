@@ -30,6 +30,7 @@ export default function ProgressForm({ onSubmit }) {
           <input
             type="date"
             name="date"
+            class="form-control"
             value={formData.date}
             onChange={handleInputChange}
             required
@@ -40,6 +41,7 @@ export default function ProgressForm({ onSubmit }) {
           <input
             type="text"
             name="exercise"
+            class="form-control"
             value={formData.exercise}
             onChange={handleInputChange}
             required
@@ -50,6 +52,7 @@ export default function ProgressForm({ onSubmit }) {
           <input
             type="number"
             name="weight"
+            class="form-control"
             value={formData.weight}
             onChange={handleInputChange}
             required
@@ -59,6 +62,7 @@ export default function ProgressForm({ onSubmit }) {
           Description:
           <textarea
             name="description"
+            class="form-control"
             value={formData.description}
             onChange={handleInputChange}
             cols="30"

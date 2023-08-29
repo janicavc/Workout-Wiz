@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ProgressForm from "../../components/ProgressForm/ProgressForm";
 import { createProgress, getProgress } from "../../utilities/progress-api";
+import './ProgressPage.css';
 
 export default function ProgressPage() {
   const [progresses, setProgresses] = useState([]);
