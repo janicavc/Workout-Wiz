@@ -10,6 +10,7 @@ export default function ProgressPage() {
     async function fetchProgressData() {
       try {
         const data = await getProgress(); // Fetch progress data using the new API function
+        data.sort((a, b) => new Date(b.date) - new Date(a.date));
         setProgresses(data);
       } catch (error) {
         console.error('Error fetching progress data:', error);
