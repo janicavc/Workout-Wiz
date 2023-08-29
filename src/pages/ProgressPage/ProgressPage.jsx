@@ -20,7 +20,7 @@ export default function ProgressPage() {
   }, []);
 
   const addProgress = async (newProgress) => {
-    console.log("new Progress Data:", newProgress);
+    console.log('new Progress Data:', newProgress);
 
     try {
       const createdProgress = await createProgress(newProgress);
@@ -38,11 +38,13 @@ export default function ProgressPage() {
       <div>
         <h2>Progress</h2>
         {progresses.map((progress, index) => (
-          <div key={index}>
+          <div className='progress-cards' key={index}>
+            <div className='progress-text'>
             <p>Date: {progress.date}</p>
             <p>Exercise: {progress.exercise}</p>
             <p>Weight: {progress.weight}</p>
             <p>Description: {progress.description}</p>
+            </div>
           </div>
         ))}
       </div>
