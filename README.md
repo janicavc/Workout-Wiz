@@ -7,13 +7,13 @@
 ## Preview
 
 Home Page:
-![Home Page](images/Screenshot%202023-08-29%20at%202.33.01%20AM.png)
+![Home Page](Images/Screenshot%202023-08-29%20at%202.33.01%20AM.png)
 
-![Exercise Categories](images/Screenshot%202023-08-29%20at%209.15.25%20AM.png)
+![Exercise Categories](Images/Screenshot%202023-08-29%20at%209.15.25%20AM.png)
 
-![Exercises](images/Screenshot%202023-08-29%20at%209.15.05%20AM.png)
+![Exercises](Images/Screenshot%202023-08-29%20at%209.15.05%20AM.png)
 
-![Exercise Description](images/Screenshot%202023-08-29%20at%209.15.14%20AM.png)
+![Exercise Description](Images/Screenshot%202023-08-29%20at%209.15.14%20AM.png)
 
 ## Code Preview
 
@@ -146,3 +146,8 @@ export default function ProgressForm({ onSubmit }) {
   );
 }
 ```
+
+## Icebox Features
+- Add pictures for each exercise category
+- Save exercises as favorites
+- Add a nutrition component to track nutrition
