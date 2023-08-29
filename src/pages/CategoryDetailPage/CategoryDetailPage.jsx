@@ -19,7 +19,7 @@ export default function CategoryDetailPage() {
     useEffect(() => {
         async function fetchExercises() {
             try {
-                const response = await fetch(`${API_URL}exercise/?category=${categoryId}`, {
+                const response = await fetch(`${API_URL}exercise/?category=${categoryId}&language=2`, {
                     headers: {
                         Authorization: `Token ${API_KEY}`,
                     },
