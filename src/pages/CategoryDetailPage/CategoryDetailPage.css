@@ -9,14 +9,28 @@
 .exercise-card {
     border: 2px solid black;
     border-radius: 10px;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 40px;
+    box-sizing: border-box;
+    background-color: #F5D4C3;
+}
+
+.exercise-name {
+    background-color: #F5D4C3;
+}
+
+.exercise-card-info {
+    background-color: #F5D4C3;
 }
 
 .dropdown {
     position: relative;
+    background-color: #F5D4C3;
   }
 
 button {
-    background-color: #007BFF;
+    background-color: #3C5556;
     color: #fff;
     border: none;
     cursor: pointer;
@@ -25,7 +39,7 @@ button {
   }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #C8DBD7;
   }
 
 .dropdown button:focus + p {

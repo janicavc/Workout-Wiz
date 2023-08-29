@@ -53,7 +53,7 @@ export default function CategoryDetailPage() {
                         to={`/exercise/${exercise.id}`}
                     >
                         <div className="exercise-card-info">
-                            <h2>{exercise.name}</h2>
+                            <h2 className="exercise-name">{exercise.name}</h2>
                             <Dropdown description={exercise.description} />
                         </div>
                     </div>
