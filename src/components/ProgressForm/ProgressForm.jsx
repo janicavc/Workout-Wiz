@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ProgressForm.css';
 
 export default function ProgressForm({ onSubmit }) {
   const initialFormData = {
@@ -24,7 +25,7 @@ export default function ProgressForm({ onSubmit }) {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className='progress-form'>
         <label>
           Date:
           <input
@@ -70,7 +71,7 @@ export default function ProgressForm({ onSubmit }) {
             required
           />
         </label>
-        <button className='btn btn-primary' type="submit">Submit</button>
+        <button className='btn btn-success' type="submit">Submit</button>
       </form>
     </div>
   );

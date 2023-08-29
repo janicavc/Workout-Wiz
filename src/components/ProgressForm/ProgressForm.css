@@ -1,0 +1,30 @@
+/* CSS for ProgressForm inputs */
+input[type="date"],
+input[type="text"],
+input[type="number"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+/* Style for labels (optional) */
+label {
+  font-weight: bold;
+}
+
+/* Style for the submit button (optional) */
+button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #3C5556; /* Change the background color to your preference */
+  color: #fff; /* Text color */
+  border: none;
+  border-radius: 5px;
+}
+
+/* Style for the entire form (optional) */
+form {
+  max-width: 400px; /* Adjust the max width as needed */
+  margin: 0 auto; /* Center the form horizontally on the page */
+}

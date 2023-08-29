@@ -40,10 +40,10 @@ export default function ProgressPage() {
         {progresses.map((progress, index) => (
           <div className='progress-cards' key={index}>
             <div className='progress-text'>
-            <p>Date: {progress.date}</p>
-            <p>Exercise: {progress.exercise}</p>
-            <p>Weight: {progress.weight}</p>
-            <p>Description: {progress.description}</p>
+            <p className="progress-text">Date: {progress.date}</p>
+            <p className="progress-text">Exercise: {progress.exercise}</p>
+            <p className="progress-text">Weight: {progress.weight}</p>
+            <p className="progress-text">Description: {progress.description}</p>
             </div>
           </div>
         ))}
