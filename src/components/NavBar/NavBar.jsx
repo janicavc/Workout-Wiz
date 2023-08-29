@@ -18,8 +18,8 @@ export default function NavBar({ user, setUser }) {
         <>
           <Link className='link' to="/progress">Progress Page</Link>
           &nbsp; | &nbsp;
-          <span>Welcome, {user.name}</span>
-          &nbsp;&nbsp;<Link to="" onClick={handleLogOut}>Log Out</Link>
+          <span className='navbar-name'>Welcome, {user.name}</span>
+          &nbsp;&nbsp;<Link className='link-logout' to="" onClick={handleLogOut}>Log Out</Link>
         </>
       ) : (
         <Link className='link' to="/auth">Log In</Link>

@@ -1,3 +1,39 @@
-.link {
-    text-decoration: none;
-}
+/* Style the entire navbar */
+.navbar {
+    background-color: #E9F1EF; /* Set the background color */
+    color: #3c5556; /* Text color */
+    padding: 40px 0; /* Add padding to the top and bottom */
+    text-align: center; /* Center-align the text */
+  }
+  
+  .link {
+    color: #3c5556; /* Text color for links */
+    background-color: #E9F1EF;
+    text-decoration: none; /* Remove underlines from links */
+    margin: 0 10px; /* Add spacing between links */
+    transition: background-color 0.3s ease;
+  }
+
+  .link:hover {
+    text-decoration: none; /* Remove underline on hover */
+    background-color: #e09789;
+  }
+  
+ .navbar-name {
+    font-weight: bold; /* Make the text bold */
+    background-color: #E9F1EF;
+  }
+  
+  .link-logout {
+    color: #3c5556; /* Text color for the "Log Out" link */
+    text-decoration: none; /* Add underline to the link */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    background-color: #E9F1EF;
+    transition: background-color 0.3s ease;
+  }
+  
+  .link-logout:hover {
+    text-decoration: none; /* Remove underline on hover */
+    background-color: #e09789;
+  }
+  
